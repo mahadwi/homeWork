@@ -21,53 +21,41 @@
   </ul>
   <div class="tab-content" id="myTabContent">
     <div class="tab-pane fade show active" id="home-tab-pane" role="tabpanel" aria-labelledby="home-tab" tabindex="0">
-      <form class="py-3 needs-validation" novalidate>
-        <label for="exampleFormControlInput1" class="form-label">Email address</label>
-        <input type="email" class="form-control mb-3" id="exampleFormControlInput1" placeholder="name@example.com">
-        <div class="valid-feedback">
-          Looks good!
-        </div>
-        <label for="exampleFormControlInput1" class="form-label">Tanggal Lahir</label>
+      <form id="formRegistrasi" class="py-3>
+        <label for="nama" class="form-label">Nama</label>
+        <input type="text" class="form-control mb-3" id="nama" placeholder="Masukan Nama">
+        <label for="tanggalLahir" class="form-label">Tanggal Lahir</label>
         <div class="input-group mb-3">
-          <input type="date" class="form-control" placeholder="Masukan Tanggal lahir" aria-label="Recipient's username" aria-describedby="basic-addon2">
-          <span class="input-group-text" id="basic-addon2"></span>
+          <input type="date" class="form-control" placeholder="Masukan Tanggal lahir" id="tanggalLahir" onchange="hitungUmur(this.value)">
+          <span class="input-group-text" id="umur"></span>
         </div>
-        <label for="exampleFormControlInput1" class="form-label">Uang Sangu</label>
-        <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
-        <button type="submit" class="btn btn-primary mt-3">Daftar</button>
+        <label for="uangSangu" class="form-label">Uang Sangu</label>
+        <input type="number" class="form-control" id="uangSangu" placeholder="Masukan Jumlah Uang">
+        <button type="button" class="btn btn-primary mt-3" onclick="onSubmitForm()">Daftar</button>
       </form>
     </div>
 
     <div class="tab-pane fade" id="profile-tab-pane" role="tabpanel" aria-labelledby="profile-tab" tabindex="0">
-      <table class="table">
-        <thead>
-          <tr>
-            <th scope="col">#</th>
-            <th scope="col">First</th>
-            <th scope="col">Last</th>
-            <th scope="col">Handle</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <th scope="row">1</th>
-            <td>Mark</td>
-            <td>Otto</td>
-            <td>@mdo</td>
-          </tr>
-          <tr>
-            <th scope="row">2</th>
-            <td>Jacob</td>
-            <td>Thornton</td>
-            <td>@fat</td>
-          </tr>
-          <tr>
-            <th scope="row">3</th>
-            <td colspan="2">Larry the Bird</td>
-            <td>@twitter</td>
-          </tr>
-        </tbody>
-      </table>
+      <div class="row">
+        <div class="col">
+          <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">Nama</th>
+                <th scope="col">Umur</th>
+                <th scope="col">Uang Sangu</th>
+              </tr>
+            </thead>
+            <tbody id="dataTable">
+              
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="row">
+
+        <h2 id="rataRata"></h2>
+      </div>
     </div>
   </div>
 </div>
