@@ -20,7 +20,7 @@ Run Seeder: npm run seed
 Run migrate: db-migrate up
 
 API
-http://localhost:3000/listFilm -> Menampilkan data seluruh list film
-http://localhost:3000/listFilm/:id -> Menampilkan data film tertentu berdasarkan id
-http://localhost:3000/listCategory/ -> Menampilkan data list category
-http://localhost:3000/listFilmByCategory/:category_id -> Menampilkan data list film berdasarkan category
+1. http://localhost:3000/listFilm -> Menampilkan data seluruh list film
+2. http://localhost:3000/listFilm/:id -> Menampilkan data film tertentu berdasarkan id
+3. http://localhost:3000/listCategory/ -> Menampilkan data list category
+4. http://localhost:3000/listFilmByCategory/:category_id -> Menampilkan data list film berdasarkan category
