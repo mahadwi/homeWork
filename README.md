@@ -15,9 +15,9 @@ tersedia
 
 Installation -> npm install
 
-Run code : npm run start
-Run Seeder: npm run seed
-Run migrate: db-migrate up
+1. Run code : npm run start
+2. Run Seeder: npm run seed
+3. Run migrate: db-migrate up
 
 API
 1. http://localhost:3000/listFilm -> Menampilkan data seluruh list film
