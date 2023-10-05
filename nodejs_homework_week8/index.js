@@ -1,11 +1,17 @@
-const express = require('express');
-const {router} = require('./route.js');
-const {pool} = require('./queries.js');
+import express from 'express';
+import { router } from './route.js';
+import { pool } from './database.js';
 
 const app = express();
 const port = 3000;
 
+app.use((req, res, next) => {
+  console.log(new Date(), req.path);
+  next();
+});
+
 app.use('/', router);
+
 
 pool.connect((err, res) => {
   if(err) {

@@ -1,13 +1,13 @@
-const express = require('express');
-const router = express.Router();
-const {pool} = require('./queries.js');
+import express from 'express';
+import { pool } from './database.js';
+export const router = express.Router();
 
 router.get('/', (req, res) => {
   res.send('Hello World');
 });
 
 router.get('/listFilm', (req, res) => {
-  pool.query('SELECT * FROM film', (err, result) => {
+  const result = pool.query('SELECT * FROM film', (err, result) => {
     if(err) {
       throw err;
     }
@@ -44,7 +44,3 @@ router.get('/listFilmByCategory/:category_id', (req, res) => {
     res.status(200).json(result.rows);
   });
 });
-
-module.exports = {
-  router,
-}
