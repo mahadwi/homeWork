@@ -1,9 +1,10 @@
 import express from "express";
-import Movies from "../api/movies.js";
+import Movies from "../controller/movies.js";
+import authentication from "../middleware/auth.js";
 
 const router = express.Router();
 
-router.get('/get', async (req, res, next) => {
+router.get('/get/:page/:per_page', async (req, res, next) => {
   try {
     const result = await Movies.getAllMovies(req, res);
     res.status(200).json({
@@ -27,31 +28,31 @@ router.get('/getById/:id', async (req, res, next) => {
   }
 });
 
-router.post('/add', async (req, res, next) => {
+router.post('/add', authentication, async (req, res, next) => {
   try {
     const result = await Movies.insertMovies(req, res);
     res.status(200).json({
       "success": true,
-      "data": "Berhasil Insert Data"
+      "respon": "Berhasil Insert Data"
     });
   } catch (error) {
     next(error);
   }
 });
 
-router.put('/edit/:id', async (req, res, next) => {
+router.patch('/edit/:id', authentication, async (req, res, next) => {
   try {
     const result = await Movies.editMovies(req, res);
     res.status(200).json({
       "success": true,
-      "data": "Berhasil Update Data"
+      "respon": "Berhasil Update Data"
     });
   } catch (error) {
     next(error);
   }
 });
 
-router.delete('/delete/:id', async (req, res, next) => {
+router.delete('/delete/:id', authentication, async (req, res, next) => {
   try {
     const result = await Movies.deleteMoviesById(req, res);
     res.status(200).json({

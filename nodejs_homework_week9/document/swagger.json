@@ -1,0 +1,377 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "Homework-9",
+    "contact": {},
+    "version": "1.0"
+  },
+  "servers": [
+    {
+      "url": "http://localhost:3000",
+      "variables": {}
+    }
+  ],
+  "paths": {
+    "/movies/get/5/0": {
+      "get": {
+        "tags": [
+          "movies"
+        ],
+        "summary": "getAllMovies",
+        "operationId": "getAllMovies",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/movies/getById/5": {
+      "get": {
+        "tags": [
+          "movies"
+        ],
+        "summary": "getMovieById",
+        "operationId": "getMovieById",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/movies/edit/5": {
+      "patch": {
+        "tags": [
+          "movies"
+        ],
+        "summary": "updateMovie",
+        "operationId": "updateMovie",
+        "parameters": [
+          {
+            "name": "Cache-Control",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "string",
+              "example": "no-cache"
+            }
+          },
+          {
+            "name": "Postman-Token",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "string",
+              "example": "<calculated when request is sent>"
+            }
+          },
+          {
+            "name": "Content-Length",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "string",
+              "example": "<calculated when request is sent>"
+            }
+          },
+          {
+            "name": "Host",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "string",
+              "example": "<calculated when request is sent>"
+            }
+          },
+          {
+            "name": "User-Agent",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "string",
+              "example": "PostmanRuntime/7.32.1"
+            }
+          },
+          {
+            "name": "Accept",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "string",
+              "example": "*/*"
+            }
+          },
+          {
+            "name": "Accept-Encoding",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "string",
+              "example": "gzip, deflate, br"
+            }
+          },
+          {
+            "name": "Connection",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "string",
+              "example": "keep-alive"
+            }
+          },
+          {
+            "name": "authorization",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "string",
+              "example": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTAxLCJlbWFpbCI6Im1haGFkd2lwdXRyYTAwOEBnbWFpbC5jb20iLCJyb2xlIjoiQWRtaW4iLCJpYXQiOjE2OTY4OTI5Nzd9.I4wzUW2l0AfYAiKGa0rXgzamRampGbYnh_WdpxZ8ems"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "allOf": [
+                  {
+                    "$ref": "#/components/schemas/updateMovieRequest"
+                  },
+                  {
+                    "example": {
+                      "title": "Dwi Putra"
+                    }
+                  }
+                ]
+              },
+              "example": {
+                "title": "Dwi Putra"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false,
+        "security": []
+      }
+    },
+    "/users/register": {
+      "post": {
+        "tags": [
+          "users"
+        ],
+        "summary": "register",
+        "operationId": "register",
+        "parameters": [],
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "allOf": [
+                  {
+                    "$ref": "#/components/schemas/registerrequest"
+                  },
+                  {
+                    "example": {
+                      "email": "baim@gmail.com",
+                      "gender": "Male",
+                      "password": "123456",
+                      "role": "Admin"
+                    }
+                  }
+                ]
+              },
+              "example": {
+                "email": "baim@gmail.com",
+                "gender": "Male",
+                "password": "123456",
+                "role": "Admin"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/users/get": {
+      "get": {
+        "tags": [
+          "users"
+        ],
+        "summary": "getUsers",
+        "operationId": "getUsers",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/users/login": {
+      "post": {
+        "tags": [
+          "Misc"
+        ],
+        "summary": "login",
+        "operationId": "login",
+        "parameters": [],
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "allOf": [
+                  {
+                    "$ref": "#/components/schemas/loginrequest"
+                  },
+                  {
+                    "example": {
+                      "email": "mahadwiputra008@gmail.com",
+                      "password": "123456"
+                    }
+                  }
+                ]
+              },
+              "example": {
+                "email": "mahadwiputra008@gmail.com",
+                "password": "123456"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "updateMovieRequest": {
+        "title": "updateMovieRequest",
+        "required": [
+          "title"
+        ],
+        "type": "object",
+        "properties": {
+          "title": {
+            "type": "string"
+          }
+        },
+        "example": {
+          "title": "Dwi Putra"
+        }
+      },
+      "registerrequest": {
+        "title": "registerrequest",
+        "required": [
+          "email",
+          "gender",
+          "password",
+          "role"
+        ],
+        "type": "object",
+        "properties": {
+          "email": {
+            "type": "string"
+          },
+          "gender": {
+            "type": "string"
+          },
+          "password": {
+            "type": "string"
+          },
+          "role": {
+            "type": "string"
+          }
+        },
+        "example": {
+          "email": "baim@gmail.com",
+          "gender": "Male",
+          "password": "123456",
+          "role": "Admin"
+        }
+      },
+      "loginrequest": {
+        "title": "loginrequest",
+        "required": [
+          "email",
+          "password"
+        ],
+        "type": "object",
+        "properties": {
+          "email": {
+            "type": "string"
+          },
+          "password": {
+            "type": "string"
+          }
+        },
+        "example": {
+          "email": "mahadwiputra008@gmail.com",
+          "password": "123456"
+        }
+      }
+    }
+  },
+  "tags": [
+    {
+      "name": "movies"
+    },
+    {
+      "name": "users"
+    },
+    {
+      "name": "Misc",
+      "description": ""
+    }
+  ]
+}

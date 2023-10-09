@@ -3,7 +3,13 @@ import pool from "../db/connection.js";
 const Movies = {};
 
 Movies.getAllMovies = async (req, res) => {
-  const result = await pool.query(`SELECT * FROM movies`);
+  const page = parseInt(req.params.page);
+  const per_page = parseInt(req.params.per_page);
+  const query = {
+    text: 'SELECT * FROM movies LIMIT $1 OFFSET $2',
+    values: [page, per_page],
+  };
+  const result = await pool.query(query);
   return result;
 }
 
@@ -27,7 +33,8 @@ Movies.insertMovies = async (req, res) => {
 
 Movies.editMovies = async (req, res) => {
   const body = req.body;
-  const result = await pool.query(`UPDATE movies SET title = ${body.title} WHERE id = ${req.params.id}`);
+  console.log(body.title);
+  const result = await pool.query(`UPDATE movies SET title = '${body.title}' WHERE id = ${req.params.id}`);
   return result;
 }
 
