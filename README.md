@@ -28,3 +28,9 @@ API
 # nodejs_homework_week9
 
 documentation swagger: https://localhost:3000/api-docs
+
+# nodejs_homework_week10
+
+Installation -> npm install
+Run code : npm run start
+
