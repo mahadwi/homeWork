@@ -24,3 +24,7 @@ API
 2. http://localhost:3000/listFilm/:id -> Menampilkan data film tertentu berdasarkan id
 3. http://localhost:3000/listCategory/ -> Menampilkan data list category
 4. http://localhost:3000/listFilmByCategory/:category_id -> Menampilkan data list film berdasarkan category
+
+# nodejs_homework_week9
+
+documentation swagger: https://localhost:3000/api-docs
